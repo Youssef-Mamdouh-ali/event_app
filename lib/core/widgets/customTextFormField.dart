@@ -13,13 +13,22 @@ class Customtextformfield extends StatefulWidget {
 
   final void Function()? onPressed;
 
-  const Customtextformfield({
+  final String? Function(String?)? validator;
+
+  void Function(String)? onFieldSubmitted;
+
+  int maxLines;
+
+  Customtextformfield({
     super.key,
     this.controller,
     this.hintText,
     this.prefixIcon,
     this.isPassword = false,
     this.onPressed,
+    this.validator,
+    this.onFieldSubmitted,
+    this.maxLines = 1,
   });
 
   @override
@@ -32,12 +41,19 @@ class _CustomtextformfieldState extends State<Customtextformfield> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: widget.maxLines,
+
+      /// validation
+      validator: widget.validator,
+      onFieldSubmitted: widget.onFieldSubmitted,
       controller: widget.controller,
+      // autovalidateMode: AutovalidateMode.always,
       cursorColor: Appcolors.borderColor,
       keyboardType: TextInputType.visiblePassword,
       obscureText: widget.isPassword ? obscure : false,
       decoration: InputDecoration(
         prefixIcon: widget.prefixIcon,
+        fillColor: Appcolors.whiteColor,
         suffixIcon: widget.isPassword
             ? IconButton(
                 onPressed: () {
@@ -57,23 +73,23 @@ class _CustomtextformfieldState extends State<Customtextformfield> {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Appcolors.borderColor),
+          borderSide: BorderSide(color: Appcolors.strokeColor),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Appcolors.borderColor),
+          borderSide: BorderSide(color: Appcolors.strokeColor),
         ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Appcolors.borderColor),
+          borderSide: BorderSide(color: Appcolors.strokeColor),
         ),
         errorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Appcolors.borderColor),
+          borderSide: BorderSide(color: Colors.red),
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Appcolors.borderColor),
+          borderSide: BorderSide(color: Appcolors.strokeColor),
         ),
       ),
     );

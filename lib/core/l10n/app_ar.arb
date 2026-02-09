@@ -1,0 +1,22 @@
+
+{
+"email" : "البريد الالكتروني" ,
+"password": "كلمة المرور" ,
+"forgetPassword":"نسيت كلمة المرور ",
+"resetPassword" : "اعادة تعيين كلمة المرور",
+"do_not_have_account" : " ليس لديك حساب ؟ ",
+"login" : "تسجيل الدخول",
+"sign_up" : "انشاء حساب",
+  "login_to_your_account": "تسجيل الدخول إلى حسابك",
+  "login_with_google" : "تسجيل الدخول عبر جوجل",
+  "or" : "أو",
+  "create_your_account" : "إنشاء حسابك",
+  "enter_your_name" : "أدخل اسمك",
+  "enter_your_email" : "أدخل بريدك الإلكتروني",
+  "enter_your_password" : "أدخل كلمة المرور",
+  "already_have_an_account" : "لديك حساب بالفعل؟",
+  "confirm_your_password" : "تأكيد كلمة المرور"
+
+
+
+}
